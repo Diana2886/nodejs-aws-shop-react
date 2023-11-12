@@ -2,8 +2,6 @@ import * as cdk from "aws-cdk-lib";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as deployment from "aws-cdk-lib/aws-s3-deployment";
 import * as cf from "aws-cdk-lib/aws-cloudfront";
-import * as iam from "aws-cdk-lib/aws-iam";
-import { Effect } from "aws-cdk-lib/aws-iam";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 
 const app = new cdk.App();
@@ -14,18 +12,7 @@ const stack = new cdk.Stack(app, "ShopReactCloudFrontStack", {
 
 const bucket = new s3.Bucket(stack, "WebAppBucket", {
   bucketName: "nodejs-aws-shop-di",
-  publicReadAccess: true,
-  removalPolicy: cdk.RemovalPolicy.DESTROY,
 });
-
-bucket.addToResourcePolicy(
-  new iam.PolicyStatement({
-    actions: ["s3:GetObject"],
-    effect: Effect.ALLOW,
-    principals: [new iam.AnyPrincipal()],
-    resources: [`${bucket.bucketArn}/*`],
-  })
-);
 
 const originAccessIdentity = new cf.OriginAccessIdentity(
   stack,
