@@ -1,8 +1,9 @@
 # The links to CloudFront URL and S3-website
 
-[https://d2za0p8r8k37bf.cloudfront.net](https://d2za0p8r8k37bf.cloudfront.net)
+The link to CloudFront: [https://d2za0p8r8k37bf.cloudfront.net](https://d2za0p8r8k37bf.cloudfront.net)
 
-[https://nodejs-aws-shop-di.s3.eu-west-1.amazonaws.com/index.html](https://nodejs-aws-shop-di.s3.eu-west-1.amazonaws.com/index.html)
+The link to S3-website: [http://nodejs-aws-shop-di.s3-website-eu-west-1.amazonaws.com](http://nodejs-aws-shop-di.s3-website-eu-west-1.amazonaws.com)
+
 
 # React-shop-cloudfront
 
