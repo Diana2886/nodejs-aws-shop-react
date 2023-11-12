@@ -14,7 +14,8 @@
     "prettier": "prettier src --write",
     "cdk:bootstrap": "cdk bootstrap --profile default",
     "cloudfront:setup": "cdk deploy --profile default --require-approval=never",
-    "cloudfront:remove": "cdk destroy --profile default --require-approval=never"
+    "cloudfront:remove": "cdk destroy --profile default --require-approval=never",
+    "cloudfront:build:setup": "npm run build && cdk deploy --profile default --require-approval=never"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
