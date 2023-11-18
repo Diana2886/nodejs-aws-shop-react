@@ -12,6 +12,18 @@ const stack = new cdk.Stack(app, "ShopReactCloudFrontStack", {
 
 const bucket = new s3.Bucket(stack, "WebAppBucket", {
   bucketName: "nodejs-aws-shop-di",
+  cors: [
+    {
+      allowedOrigins: ["'*'"],
+      allowedHeaders: ["'*'"],
+      allowedMethods: [
+        s3.HttpMethods.GET,
+        s3.HttpMethods.PUT,
+        s3.HttpMethods.POST,
+        s3.HttpMethods.DELETE,
+      ],
+    },
+  ],
 });
 
 const originAccessIdentity = new cf.OriginAccessIdentity(
